@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ -d "/proc/$1" ]
+then
+    echo `cat /proc/$1/status | grep Name:`
+    echo `cat /proc/$1/status | grep "^Pid:"`
+    echo `cat /proc/$1/status | grep PPid:`
+
+    if [ "$2" = "fd" ]
+    then
+        for var in `sudo ls /proc/$1/$2`
+        do
+            echo "fd = $var"
+        done
+    fi
+else
+    echo "process not found"
+fi
