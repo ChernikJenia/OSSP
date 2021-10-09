@@ -1,0 +1,8 @@
+====== Power Shell
+(Get-Process os03-01).Thread
+
+====== tasklist
+tasklist | find "OS03"
+
+====== Мониторинг ресурсов
+resmon
